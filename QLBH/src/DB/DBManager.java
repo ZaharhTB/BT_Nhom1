@@ -69,9 +69,46 @@ public class DBManager {
              db.Disconnect();
          }
 
-     }  
+     }     
      
-     public static ResultSet search(String ob){
-         return GetData(ob);
-     }    
+public static boolean Table1(JTable j, String sql) {
+    ResultSet rs = GetData(sql);
+    if (rs == null)
+        return false;
+    try {
+        // Tạo một DefaultTableModel mới
+        DefaultTableModel dtm = new DefaultTableModel();
+
+        // Thêm model mới vào JTable
+        j.setModel(dtm);
+
+        // Thêm dữ liệu từ ResultSet vào bảng một cách tự động
+        ResultSetMetaData metaData = rs.getMetaData();
+        int columnCount = metaData.getColumnCount();
+        // Thêm tên cột vào DefaultTableModel
+        for (int i = 1; i <= columnCount; i++) {
+            dtm.addColumn(metaData.getColumnLabel(i));
+        }
+        // Thêm dữ liệu từ ResultSet vào DefaultTableModel
+        while (rs.next()) {
+            Object[] rowData = new Object[columnCount];
+            for (int i = 0; i < columnCount; i++) {
+                rowData[i] = rs.getObject(i + 1);
+            }
+            dtm.addRow(rowData);
+        }
+
+        // Đóng ResultSet
+        rs.close();
+
+        return true;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        DataBase db = new DataBase();
+        db.Disconnect();
+    }
+}
+     
 }
