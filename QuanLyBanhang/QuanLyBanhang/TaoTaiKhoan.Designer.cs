@@ -218,7 +218,7 @@
             this.txt_TKtenKH.Name = "txt_TKtenKH";
             this.txt_TKtenKH.Size = new System.Drawing.Size(148, 27);
             this.txt_TKtenKH.TabIndex = 38;
-            this.txt_TKtenKH.Text = "Nhập Tên ND";
+            this.txt_TKtenKH.Text = "Nhập Tên NV";
             this.txt_TKtenKH.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_TKtenKH_MouseClick);
             // 
             // btn_timkiem

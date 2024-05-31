@@ -109,7 +109,7 @@
             // 
             this.txt_TKtenNV.Location = new System.Drawing.Point(12, 38);
             this.txt_TKtenNV.Name = "txt_TKtenNV";
-            this.txt_TKtenNV.Size = new System.Drawing.Size(183, 27);
+            this.txt_TKtenNV.Size = new System.Drawing.Size(165, 27);
             this.txt_TKtenNV.TabIndex = 7;
             this.txt_TKtenNV.Text = "Nhập Tên Nhân Viên";
             this.txt_TKtenNV.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_TKtenKH_MouseClick);
@@ -118,9 +118,9 @@
             // 
             this.btn_timkiem.Image = global::QuanLyBanhang.Properties.Resources.search;
             this.btn_timkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_timkiem.Location = new System.Drawing.Point(216, 21);
+            this.btn_timkiem.Location = new System.Drawing.Point(183, 21);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(117, 61);
+            this.btn_timkiem.Size = new System.Drawing.Size(135, 61);
             this.btn_timkiem.TabIndex = 8;
             this.btn_timkiem.Text = "Tìm Kiếm";
             this.btn_timkiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,9 +133,9 @@
             this.bt_sgl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bt_sgl.Location = new System.Drawing.Point(496, 21);
             this.bt_sgl.Name = "bt_sgl";
-            this.bt_sgl.Size = new System.Drawing.Size(197, 61);
+            this.bt_sgl.Size = new System.Drawing.Size(171, 61);
             this.bt_sgl.TabIndex = 10;
-            this.bt_sgl.Text = "Cập nhật số giờ làm";
+            this.bt_sgl.Text = "Cập nhật sgl";
             this.bt_sgl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_sgl.UseVisualStyleBackColor = true;
             this.bt_sgl.Click += new System.EventHandler(this.bt_sgl_Click);
@@ -144,9 +144,9 @@
             // 
             this.btn_Excel.Image = global::QuanLyBanhang.Properties.Resources.excel;
             this.btn_Excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Excel.Location = new System.Drawing.Point(1074, 25);
+            this.btn_Excel.Location = new System.Drawing.Point(1055, 21);
             this.btn_Excel.Name = "btn_Excel";
-            this.btn_Excel.Size = new System.Drawing.Size(127, 61);
+            this.btn_Excel.Size = new System.Drawing.Size(146, 61);
             this.btn_Excel.TabIndex = 13;
             this.btn_Excel.Text = "File Excel";
             this.btn_Excel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,9 +157,9 @@
             // 
             this.bt_lmoi.Image = global::QuanLyBanhang.Properties.Resources.reset;
             this.bt_lmoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_lmoi.Location = new System.Drawing.Point(358, 21);
+            this.bt_lmoi.Location = new System.Drawing.Point(341, 21);
             this.bt_lmoi.Name = "bt_lmoi";
-            this.bt_lmoi.Size = new System.Drawing.Size(115, 61);
+            this.bt_lmoi.Size = new System.Drawing.Size(132, 61);
             this.bt_lmoi.TabIndex = 9;
             this.bt_lmoi.Text = "Làm mới";
             this.bt_lmoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,9 +170,9 @@
             // 
             this.bt_sua.Image = global::QuanLyBanhang.Properties.Resources.update;
             this.bt_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_sua.Location = new System.Drawing.Point(716, 26);
+            this.bt_sua.Location = new System.Drawing.Point(700, 21);
             this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(173, 61);
+            this.bt_sua.Size = new System.Drawing.Size(185, 61);
             this.bt_sua.TabIndex = 11;
             this.bt_sua.Text = "Cập nhật lương";
             this.bt_sua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -183,11 +183,12 @@
             // 
             this.bt_xoa.Image = global::QuanLyBanhang.Properties.Resources.delete;
             this.bt_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_xoa.Location = new System.Drawing.Point(913, 25);
+            this.bt_xoa.Location = new System.Drawing.Point(909, 21);
             this.bt_xoa.Name = "bt_xoa";
-            this.bt_xoa.Size = new System.Drawing.Size(114, 61);
+            this.bt_xoa.Size = new System.Drawing.Size(115, 61);
             this.bt_xoa.TabIndex = 12;
             this.bt_xoa.Text = "Xóa";
+            this.bt_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_xoa.UseVisualStyleBackColor = true;
             this.bt_xoa.Click += new System.EventHandler(this.bt_xoa_Click);
             // 

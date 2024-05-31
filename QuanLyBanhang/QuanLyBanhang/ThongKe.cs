@@ -45,8 +45,8 @@ namespace QuanLyBanhang
             }
             else
             {
-                string ngayBatDauFormatted = ngayBatDau.ToString("MM/dd/yyyy");
-                string ngayKetThucFormatted = ngayKetThuc.ToString("MM/dd/yyyy");
+                string ngayBatDauFormatted = ngayBatDau.ToString("yyyy/MM/dd");
+                string ngayKetThucFormatted = ngayKetThuc.ToString("yyyy/MM/dd");
 
                 if (rdbPN.Checked)
                 {

@@ -19,67 +19,6 @@ namespace QuanLyBanhang
             menuStrip1.Visible = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuDanhmuc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuBaocao_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuChatlieu_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void mnuNhanvien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuKhachhang_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void mnuSanPham_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuHoadonban_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuDoanhthu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tinhLuong_Menustrip_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -92,38 +31,6 @@ namespace QuanLyBanhang
                 this.Hide();
             }
         }
-
-        private void mnuThoat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TK_menustrip_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void menuStrip1_MouseLeave(object sender, EventArgs e)
-        {
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TK_menustrip_Click_1(object sender, EventArgs e)
         {
             this.Hide();
@@ -204,11 +111,6 @@ namespace QuanLyBanhang
             this.Show();
         }
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
         private void PB_MENU_MouseLeave(object sender, EventArgs e)
         {
             if (!menuStrip1.Bounds.Contains(PointToClient(MousePosition)))
@@ -218,16 +120,6 @@ namespace QuanLyBanhang
                 menuStrip1.Visible = false; // Ẩn MenuStrip khi chuột rời khỏi
             }
         }
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-            if (!isPB_MENUHovered && !menuStrip1.Bounds.Contains(PointToClient(MousePosition)))
-            {
-                PB_MENU.Visible = true; // Hiển thị PictureBox khi chuột rời khỏi MenuStrip
-                menuStrip1.Visible = false; // Ẩn MenuStrip khi chuột rời khỏi MenuStrip
-            }
-        }
-
         private void PB_MENU_MouseEnter(object sender, EventArgs e)
         {
             isPB_MENUHovered = true;
@@ -243,8 +135,7 @@ namespace QuanLyBanhang
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
-            menuStrip1.Visible = false;
-            PB_MENU.Visible = true;
+            PB_MENU_MouseLeave(sender, e);
         }
     }
 }

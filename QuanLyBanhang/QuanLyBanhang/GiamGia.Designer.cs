@@ -36,17 +36,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.cb_loaihang = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_tangHuy = new System.Windows.Forms.Button();
-            this.btn_tangok = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_tang = new System.Windows.Forms.Button();
+            this.btn_giam = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -123,87 +119,41 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Loại Hàng";
             // 
-            // button1
+            // panel2
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(26, 110);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 74);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel2.Controls.Add(this.btn_giam);
+            this.panel2.Controls.Add(this.btn_tang);
+            this.panel2.Location = new System.Drawing.Point(552, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(166, 190);
+            this.panel2.TabIndex = 1;
             // 
-            // groupBox2
+            // btn_tang
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(752, 17);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(194, 197);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Giảm Giá";
+            this.btn_tang.Location = new System.Drawing.Point(29, 32);
+            this.btn_tang.Name = "btn_tang";
+            this.btn_tang.Size = new System.Drawing.Size(105, 39);
+            this.btn_tang.TabIndex = 0;
+            this.btn_tang.Text = "Tăng Giá";
+            this.btn_tang.UseVisualStyleBackColor = true;
+            this.btn_tang.Click += new System.EventHandler(this.btn_tang_Click);
             // 
-            // button2
+            // btn_giam
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(26, 27);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 74);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_tangHuy);
-            this.groupBox3.Controls.Add(this.btn_tangok);
-            this.groupBox3.Location = new System.Drawing.Point(552, 17);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(194, 197);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tăng Giá";
-            // 
-            // btn_tangHuy
-            // 
-            this.btn_tangHuy.Image = ((System.Drawing.Image)(resources.GetObject("btn_tangHuy.Image")));
-            this.btn_tangHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_tangHuy.Location = new System.Drawing.Point(26, 27);
-            this.btn_tangHuy.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_tangHuy.Name = "btn_tangHuy";
-            this.btn_tangHuy.Size = new System.Drawing.Size(134, 74);
-            this.btn_tangHuy.TabIndex = 4;
-            this.btn_tangHuy.Text = "Hủy";
-            this.btn_tangHuy.UseVisualStyleBackColor = true;
-            this.btn_tangHuy.Click += new System.EventHandler(this.btn_tangHuy_Click);
-            // 
-            // btn_tangok
-            // 
-            this.btn_tangok.Image = ((System.Drawing.Image)(resources.GetObject("btn_tangok.Image")));
-            this.btn_tangok.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_tangok.Location = new System.Drawing.Point(26, 110);
-            this.btn_tangok.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_tangok.Name = "btn_tangok";
-            this.btn_tangok.Size = new System.Drawing.Size(134, 74);
-            this.btn_tangok.TabIndex = 3;
-            this.btn_tangok.Text = "Lưu";
-            this.btn_tangok.UseVisualStyleBackColor = true;
-            this.btn_tangok.Click += new System.EventHandler(this.btn_tangok_Click);
+            this.btn_giam.Location = new System.Drawing.Point(29, 115);
+            this.btn_giam.Name = "btn_giam";
+            this.btn_giam.Size = new System.Drawing.Size(105, 39);
+            this.btn_giam.TabIndex = 1;
+            this.btn_giam.Text = "Giảm Giá";
+            this.btn_giam.UseVisualStyleBackColor = true;
+            this.btn_giam.Click += new System.EventHandler(this.btn_giam_Click);
             // 
             // GiamGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 214);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(729, 214);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -219,8 +169,7 @@
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,11 +183,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cb_loaihang;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btn_tangHuy;
-        private System.Windows.Forms.Button btn_tangok;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_giam;
+        private System.Windows.Forms.Button btn_tang;
     }
 }

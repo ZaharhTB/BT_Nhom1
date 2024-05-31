@@ -464,6 +464,7 @@
             this.btn_timkiem.Size = new System.Drawing.Size(148, 46);
             this.btn_timkiem.TabIndex = 13;
             this.btn_timkiem.Text = "Tìm Kiếm";
+            this.btn_timkiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_timkiem.UseVisualStyleBackColor = true;
             this.btn_timkiem.Click += new System.EventHandler(this.btn_timkiem_Click);
             // 
@@ -477,6 +478,7 @@
             this.btnLammoi.Size = new System.Drawing.Size(165, 46);
             this.btnLammoi.TabIndex = 5;
             this.btnLammoi.Text = "Làm mới";
+            this.btnLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLammoi.UseMnemonic = false;
             this.btnLammoi.UseVisualStyleBackColor = true;
             this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click);
@@ -491,6 +493,7 @@
             this.btnXoa.Size = new System.Drawing.Size(138, 48);
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -504,6 +507,7 @@
             this.btnSua.Size = new System.Drawing.Size(138, 47);
             this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -517,6 +521,7 @@
             this.btnThem.Size = new System.Drawing.Size(138, 49);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseMnemonic = false;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);

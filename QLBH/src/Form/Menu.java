@@ -128,12 +128,13 @@ public class Menu extends javax.swing.JFrame {
         this.setVisible(false);
         DangNhap dn = new DangNhap();
         dn.setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_exitMouseClicked
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-                this.setVisible(false);
+        this.setVisible(false);
         NhaCungCap ncc = new NhaCungCap();
         ncc.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed

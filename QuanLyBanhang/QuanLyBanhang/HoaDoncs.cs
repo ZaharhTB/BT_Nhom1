@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -353,7 +354,6 @@ namespace QuanLyBanhang
                     }
                 }
 
-                // Gọi hàm ExportFile với DataTable mới chứa các dòng được chọn
                 ExportFile(selectedDataTable, "Hoa don", "Hoá thanh toán");
             }
             else
@@ -484,8 +484,8 @@ namespace QuanLyBanhang
             oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
             oSheet.get_Range("J:J").NumberFormat = "DD-MM-YYYY";
-            oSheet.get_Range("N:N").NumberFormat = "#,##0";
-            oSheet.get_Range("M:M").NumberFormat = "#,##0";
+            oSheet.get_Range("N:N").NumberFormat = "#,##0.00\\ \"VND\"";
+            oSheet.get_Range("M:M").NumberFormat = "#,##0.00\\ \"VND\"";
 
             // Tạo ô cho Tổng Số Tiền dưới cột L
             Microsoft.Office.Interop.Excel.Range cl14 = oSheet.Cells[rowEnd+1,columnEnd-1];

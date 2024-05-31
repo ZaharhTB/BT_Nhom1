@@ -116,7 +116,7 @@
             // 
             this.hdToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.hdToolStripMenuItem.Name = "hdToolStripMenuItem";
-            this.hdToolStripMenuItem.Size = new System.Drawing.Size(173, 30);
+            this.hdToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.hdToolStripMenuItem.Text = "Hóa Đơn";
             this.hdToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hdToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnToolStripMenuItem_Click_1);
@@ -163,7 +163,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Bán Hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_nv_FormClosing_1);
-            this.Load += new System.EventHandler(this.frmMain_nv_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_MENU)).EndInit();

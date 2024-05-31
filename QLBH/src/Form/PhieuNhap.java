@@ -5,6 +5,7 @@
 package Form;
 
 import DB.DBManager;
+import DB.DataBase;
 import java.awt.Desktop;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -112,6 +113,9 @@ public class PhieuNhap extends javax.swing.JFrame {
         rs.close();
         }catch(SQLException ex){
             Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
+            DataBase db = new DataBase();
+            db.Disconnect(); 
         }
         
     }
@@ -600,6 +604,9 @@ public class PhieuNhap extends javax.swing.JFrame {
             }
         }catch(SQLException e){
             Logger.getLogger(PhieuNhap.class.getName()).log(Level.SEVERE, null, e);
+        }finally {
+            DataBase db = new DataBase();
+            db.Disconnect(); 
         }
         return dg;
     }

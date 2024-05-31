@@ -17,29 +17,6 @@ namespace QuanLyBanhang
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            btn_tangHuy.Enabled=false;
-            btn_tangok.Enabled=false;
-            sql = " SELECT COUNT(*) FROM hdx inner join SanPham on SanPham.ma_sp=hdx.ma_sp WHERE mat_hang = N'" + cb_loaihang.Text.Trim() + "'";
-            int count = Convert.ToInt16(Function.ExecuteScalar(sql));
-            if (count > 0)
-            {
-                if (check(txt_ptGiam.Text))
-                     {
-                    int x = Convert.ToInt16(txt_ptGiam.Text);
-                    float y = (float)(x / 100.0);
-                    sql = "UPDATE hdx SET dg = dg- (dg * (" + y + ")) FROM hdx INNER JOIN SanPham ON hdx.ma_sp = SanPham.ma_sp where hdx.ma_sp=SanPham.ma_sp and mat_hang=N'" + cb_loaihang.Text.Trim() + "'";
-                    Function.ExecuteNonQuery(sql);
-                    MessageBox.Show("Cập nhật thành công", "Thông báo");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Mặt hàng này hiện không có trong kho");
-            }
-        }
         private void loadcombobox()
         {
             sql = "select loai_hang from Loai_Hang";
@@ -58,47 +35,85 @@ namespace QuanLyBanhang
             return true;
 
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            btn_tangHuy.Enabled = true;
-            btn_tangok.Enabled = true;
-            txt_ptGiam.Text = "";
-            txt_ptGiam.Focus();
-        }
-
         private void GiamGia_Load(object sender, EventArgs e)
         {
             loadcombobox();
         }
-
-        private void btn_tangHuy_Click(object sender, EventArgs e)
+        private void btn_tang_Click(object sender, EventArgs e)
         {
-            txt_ptGiam.Text = "";
-            txt_ptGiam.Focus();
-            button1.Enabled = true;
-            button2.Enabled = true;
-        }
-
-        private void btn_tangok_Click(object sender, EventArgs e)
-        {
-            button1.Enabled = false;
-            button2.Enabled = false;
-            sql = " SELECT COUNT(*) FROM hdx inner join SanPham on SanPham.ma_sp=hdx.ma_sp WHERE mat_hang = N'" + cb_loaihang.Text.Trim() + "'";
-            int count=Convert.ToInt16(Function.ExecuteScalar(sql));
-            if (count > 0)
+            if(btn_tang.Text=="Tăng Giá")
             {
-                if (check(txt_ptGiam.Text))
+                btn_tang.Text = "Hủy";
+                btn_giam.Text = "Lưu";
+            }
+            else if (btn_tang.Text=="Lưu")
+            {
+                sql = " SELECT COUNT(*) FROM hdn inner join SanPham on SanPham.ma_sp=hdn.ma_sp WHERE SanPham.mat_hang = N'" + cb_loaihang.Text.Trim() + "'";
+                int count = Convert.ToInt16(Function.ExecuteScalar(sql));
+                if (count > 0)
                 {
-                    int x = Convert.ToInt16(txt_ptGiam.Text);
-                    float y = (float)(x / 100.0);
-                    sql = "UPDATE hdx SET dg = dg+ (dg * (" + y + ")) FROM hdx INNER JOIN SanPham ON hdx.ma_sp = SanPham.ma_sp where hdx.ma_sp = SanPham.ma_sp and mat_hang = N'" + cb_loaihang.Text.Trim() + "'";
-                    Function.ExecuteNonQuery(sql);
-                    MessageBox.Show("Cập nhật thành công", "Thông báo");
+                    if (check(txt_ptGiam.Text))
+                    {
+                        int x = Convert.ToInt16(txt_ptGiam.Text);
+                        float y = (float)(x / 100.0);
+                        sql = "UPDATE hdn SET dg = dg- (dg * (" + y + ")) FROM hdn INNER JOIN SanPham ON hdn.ma_sp = SanPham.ma_sp where hdn.ma_sp = SanPham.ma_sp and SanPham.mat_hang = N'" + cb_loaihang.Text.Trim() + "'";
+                        Function.ExecuteNonQuery(sql);
+                        MessageBox.Show("Giảm giá thành công", "Thông báo");
+                        txt_ptGiam.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tỷ lệ % tối thiểu là 1% hoặc tối đa là 100% ", "Thông báo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Mặt hàng này hiện không có trong kho");
                 }
             }
             else
             {
-                MessageBox.Show("Mặt hàng này hiện không có trong kho");
+                btn_tang.Text = "Tăng Giá";
+                btn_giam.Text = "Giảm Giá";
+            }
+        }
+
+        private void btn_giam_Click(object sender, EventArgs e)
+        {
+            if (btn_giam.Text == "Giảm Giá")
+            {
+                btn_tang.Text = "Lưu";
+                btn_giam.Text = "Hủy";
+            }
+            else if (btn_giam.Text == "Lưu")
+            {
+                sql = " SELECT COUNT(*) FROM hdn inner join SanPham on SanPham.ma_sp=hdn.ma_sp WHERE SanPham.mat_hang = N'" + cb_loaihang.Text.Trim() + "'";
+                int count = Convert.ToInt16(Function.ExecuteScalar(sql));
+                if (count > 0)
+                {
+                    if (check(txt_ptGiam.Text))
+                    {
+                        int x = Convert.ToInt16(txt_ptGiam.Text);
+                        float y = (float)(x / 100.0);
+                        sql = "UPDATE hdn SET dg = dg+ (dg * (" + y + ")) FROM hdn INNER JOIN SanPham ON hdn.ma_sp = SanPham.ma_sp where hdn.ma_sp=SanPham.ma_sp and SanPham.mat_hang=N'" + cb_loaihang.Text.Trim() + "'";
+                        Function.ExecuteNonQuery(sql);
+                        MessageBox.Show("Tăng giá thành công", "Thông báo");
+                        txt_ptGiam.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tỷ lệ % tối thiểu là 1% hoặc tối đa là 100% ", "Thông báo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Mặt hàng này hiện không có trong kho");
+                }
+            }
+            else
+            {
+                btn_tang.Text = "Tăng Giá";
+                btn_giam.Text = "Giảm Giá";
             }
         }
     }

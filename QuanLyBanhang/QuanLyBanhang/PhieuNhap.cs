@@ -257,54 +257,6 @@ namespace QuanLyBanhang
         private void lbl_tongst_Click(object sender, EventArgs e)
         {
         }
-
-        private void btn_Word_Click(object sender, EventArgs e)
-        {
-            ExportToWord(dt, "PhieuNhap", "Danh sách thiết bị đã nhập");
-        }
-        public void ExportToWord(DataTable dataTable, string fileName, string title)
-        {
-            Word.Application wordApp = new Word.Application();
-            Word.Document wordDoc = wordApp.Documents.Add();
-
-            // Tiêu đề của tài liệu
-            Word.Paragraph titlePara = wordDoc.Content.Paragraphs.Add();
-            titlePara.Range.Text = title;
-            titlePara.Range.Font.Bold = 1;
-            titlePara.Range.Font.Size = 16;
-            titlePara.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-            titlePara.Range.InsertParagraphAfter();
-
-            // Tạo bảng
-            Word.Table table = wordDoc.Tables.Add(wordDoc.Bookmarks[fileName].Range, dataTable.Rows.Count + 1, dataTable.Columns.Count);
-
-            // Đổ dữ liệu vào bảng
-            // Header row
-            for (int i = 0; i < dataTable.Columns.Count; i++)
-            {
-                table.Cell(1, i + 1).Range.Text = dataTable.Columns[i].ColumnName;
-            }
-
-            // Data rows
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                for (int j = 0; j < dataTable.Columns.Count; j++)
-                {
-                    table.Cell(i + 2, j + 1).Range.Text = dataTable.Rows[i][j].ToString();
-                }
-            }
-
-            // Lưu tài liệu Word
-            object fileFormat = Word.WdSaveFormat.wdFormatDocument;
-            object filePath = @"E:\BT_Nhom\" + fileName + ".docx";
-            wordDoc.SaveAs2(filePath, ref fileFormat);
-
-
-            // Đóng và giải phóng tài liệu Word
-            wordDoc.Close();
-            wordApp.Quit();
-        }
-
         private void PhieuNhap_Resize(object sender, EventArgs e)
         {
 

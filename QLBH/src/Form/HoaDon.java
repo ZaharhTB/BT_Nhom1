@@ -5,6 +5,7 @@
 package Form;
 
 import DB.DBManager;
+import DB.DataBase;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -32,9 +33,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class HoaDon extends javax.swing.JFrame {
     private String sql;
-    private Map<String, String> spMap = new HashMap<>();
-    private Map<String, String> khMap = new HashMap<>();
-    private SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+    private final Map<String, String> spMap = new HashMap<>();
+    private final Map<String, String> khMap = new HashMap<>();
+    private final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
     /**
      * Creates new form HoaDon
      */
@@ -129,6 +130,9 @@ public class HoaDon extends javax.swing.JFrame {
         rs1.close();
         }catch(SQLException ex){
             Logger.getLogger(SanPham.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
+            DataBase db = new DataBase();
+            db.Disconnect(); 
         }
         
     }
@@ -143,7 +147,10 @@ public class HoaDon extends javax.swing.JFrame {
         }
         }catch(SQLException ex){
                 Logger.getLogger(HoaDon.class.getName()).log(Level.SEVERE, null, ex);
-                }      
+        }      finally {
+            DataBase db = new DataBase();
+            db.Disconnect(); 
+        }
         return dg;
     }
 private void updateCB() {
@@ -231,6 +238,9 @@ private void updateCB() {
             }
         }catch(SQLException ex){
             Logger.getLogger(HoaDon.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
+            DataBase db = new DataBase();
+            db.Disconnect(); 
         }
         return sl;
     }
@@ -243,6 +253,7 @@ private void updateCB() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -275,9 +286,12 @@ private void updateCB() {
         cb_mkh = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         txt_sum = new javax.swing.JTextField();
+        btn_updatedg = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         j = new javax.swing.JTable();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -462,6 +476,13 @@ private void updateCB() {
 
     txt_sum.setEditable(false);
 
+    btn_updatedg.setText("Tăng\\Giảm Giá");
+    btn_updatedg.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btn_updatedgActionPerformed(evt);
+        }
+    });
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -488,18 +509,24 @@ private void updateCB() {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGap(42, 42, 42)
                                     .addComponent(txt_sp, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(cb_mkh, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(cb_mkh, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(btn_updatedg, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE))))
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(btn_them, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(113, 113, 113)))
+                            .addGap(113, 113, 113))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btn_sua, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cb_tkh, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -523,7 +550,7 @@ private void updateCB() {
                 .addComponent(txt_dg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(29, 29, 29))
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap(647, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addComponent(btn_xoa, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -610,7 +637,8 @@ private void updateCB() {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                     .addComponent(btn_tk, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_tkkh, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
+                    .addComponent(txt_tkkh, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(btn_updatedg))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_sau)
                     .addComponent(btn_cuoi)
@@ -1006,6 +1034,14 @@ private void updateCB() {
         }       
     }//GEN-LAST:event_cb_mspItemStateChanged
 
+    private void btn_updatedgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatedgActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        ThayDoiGia mn = new ThayDoiGia();
+        mn.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_updatedgActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1052,6 +1088,7 @@ private void updateCB() {
     private javax.swing.JButton btn_thoat;
     private javax.swing.JButton btn_tk;
     private javax.swing.JButton btn_truoc;
+    private javax.swing.JButton btn_updatedg;
     private javax.swing.JButton btn_xoa;
     private javax.swing.JComboBox<String> cb_mkh;
     private javax.swing.JComboBox<String> cb_msp;
@@ -1068,6 +1105,7 @@ private void updateCB() {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

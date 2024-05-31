@@ -17,7 +17,7 @@ namespace QuanLyBanhang
         public frmMain_nv()
         {
             InitializeComponent();
-            menuStrip1.Visible = false; // Ẩn MenuStrip khi khởi động
+            menuStrip1.Visible = false;
         }
 
         private void frmMain_nv_Load(object sender, EventArgs e)
@@ -56,14 +56,9 @@ namespace QuanLyBanhang
                     int thoiGianLamViecPhut = (int)thoiGianLamViec.TotalMinutes; // Chuyển đổi thành phút
                     UpdateWorkingTime(thoiGianLamViecPhut);
 
-                    // Hiển thị form đăng nhập
                     DangNhap frmdangnhap = new DangNhap();
                     frmdangnhap.Show();
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy thời điểm đăng nhập.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -71,23 +66,6 @@ namespace QuanLyBanhang
                 e.Cancel = true;
             }
         }
-
-        private void mnuKhachhang_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            KhachHangcs khachhangcs = new KhachHangcs();
-            khachhangcs.ShowDialog();
-            this.Show();
-        }
-
-        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            HoaDoncs hd = new HoaDoncs("Nhan Vien");
-            hd.ShowDialog();
-            this.Show();
-        }
-
         private void PB_MENU_MouseLeave(object sender, EventArgs e)
         {
             if (!menuStrip1.Bounds.Contains(PointToClient(MousePosition)))
@@ -103,15 +81,6 @@ namespace QuanLyBanhang
             isPB_MENUHovered = true;
             PB_MENU.Visible = false; // Ẩn PictureBox khi trỏ chuột vào
             menuStrip1.Visible = true;
-        }
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-            if (!isPB_MENUHovered && !menuStrip1.Bounds.Contains(PointToClient(MousePosition)))
-            {
-                PB_MENU.Visible = true; // Hiển thị PictureBox khi chuột rời khỏi MenuStrip
-                menuStrip1.Visible = false; // Ẩn MenuStrip khi chuột rời khỏi MenuStrip
-            }
         }
 
         private void mnuDanhmuc_Click(object sender, EventArgs e)
@@ -143,8 +112,7 @@ namespace QuanLyBanhang
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
-            menuStrip1.Visible=false;
-            PB_MENU.Visible = true;
+            PB_MENU_MouseLeave(sender,e);
         }
 
         private void mnuThoat_Click(object sender, EventArgs e)

@@ -496,7 +496,7 @@
             // 
             this.txt_TKtenKH.Location = new System.Drawing.Point(12, 58);
             this.txt_TKtenKH.Name = "txt_TKtenKH";
-            this.txt_TKtenKH.Size = new System.Drawing.Size(180, 28);
+            this.txt_TKtenKH.Size = new System.Drawing.Size(203, 28);
             this.txt_TKtenKH.TabIndex = 12;
             this.txt_TKtenKH.Text = "Nhập Tên Khách Hàng";
             this.txt_TKtenKH.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_TKtenKH_MouseClick);
@@ -505,9 +505,9 @@
             // 
             this.btn_timkiem.Image = global::QuanLyBanhang.Properties.Resources.search;
             this.btn_timkiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_timkiem.Location = new System.Drawing.Point(225, 46);
+            this.btn_timkiem.Location = new System.Drawing.Point(250, 47);
             this.btn_timkiem.Name = "btn_timkiem";
-            this.btn_timkiem.Size = new System.Drawing.Size(123, 50);
+            this.btn_timkiem.Size = new System.Drawing.Size(138, 50);
             this.btn_timkiem.TabIndex = 11;
             this.btn_timkiem.Text = "Tìm Kiếm";
             this.btn_timkiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -589,6 +589,7 @@
             this.btnXoa.Size = new System.Drawing.Size(138, 43);
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -602,6 +603,7 @@
             this.btnSua.Size = new System.Drawing.Size(138, 41);
             this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
